@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="expense-tracker-card">
+      <h1 class="heading">Expense Tracker</h1>
+
+      <div class="balance-container">
+
+        <div class="total-balance">
+          <p>Your Balance</p>
+          <p id="balance">$0.00</p>
+        </div>
+
+        <div class="income-expense">
+          <div class="income-div">
+            <p>Income</p>
+            <p id="income">$0.00</p>
+          </div>
+
+          <div class="expense-div">
+            <p>Expense</p>
+            <p id="expense">$0.00</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="transactions-container">
+
+        <div class="show-transactions">
+          <h3>Transactions</h3>
+
+          <div class="all-transactions">
+
+            <!-- <div class="transaction">
+              <div class="transaction-details">
+                <p id="t-description">Mackbook M6 Pro Lorem ipsum dolor sit amet.</p>
+                <p id="t-amount">$450000</p>
+              </div>
+              <span id="remove-btn">❌</span>
+            </div> -->
+          </div>
+
+        </div>
+
+        <div class="add-transactions">
+
+          <h3>Add Transactions</h3>
+
+          <form action="">
+            <label for="description">Description</label>
+            <br>
+            <input type="text" id="description" placeholder="Enter Description">
+            <br><br>
+            <label for="amount">Amount</label>
+            <br>
+            <input type="number" id="amount" placeholder="Enter Amount">
+            <p class="negative-note">Use negative (-) for expenses</p>
+            <br>
+            <button type="submit" id="add-transaction-btn">Add Transaction</button>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

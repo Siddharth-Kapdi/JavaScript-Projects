@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Start Screen -->
+    <div class="start-screen " id="start-screen">
+      <h1 class="start-heading">Quiz Time!</h1>
+      <p class="quiz-description">Test your knowledge with these fun questions</p>
+      <button id="start-btn">Start Quiz</button>
+    </div>
+
+    <!-- Quiz screen -->
+    <div class="quiz-screen hidden" id="quiz-screen">
+      <h3 id="question"></h3>
+      <div class="remaining-score-div">
+        <p id="remaining-question"></p>
+        <p id="score"></p>
+      </div>
+      <div id="options-div">
+        <!-- <p class="option">Microsoft Windows</p>
+        <p class="option">Wikipedia</p>
+        <p class="option">Linux</p>
+        <p class="option">Python</p> -->
+      </div>
+
+      <progress id="progress-bar" value="0" max="100"></progress>
+
+    </div>
+
+    <!-- Result Screen -->
+    <div class="result-screen hidden" id="result-screen">
+      <h2 class="result-heading">Quiz Results</h2>
+      <div class="result-div">
+        <p id="result">You Score 3 out of 5</p>
+        <p id="result-msg">Good effort! Keep learning!</p>
+      </div>
+      <button id="restart-btn">Restart Quiz</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>

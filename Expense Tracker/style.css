@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-border: #334155;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-income: #4ade80;
+  --color-expense: #f87171;
+  --color-primary: #60a5fa;
+  --color-warning: #fbbf24;
+
+  /* Font sizes */
+  --font-xs: 0.75rem;
+  /* 12px - labels, meta info */
+  --font-sm: 0.875rem;
+  /* 14px - secondary text */
+  --font-base: 1rem;
+  /* 16px - body text */
+  --font-lg: 1.25rem;
+  /* 18px - emphasized text */
+  --font-xl: 1.5rem;
+  /* 24px - section headers */
+  --font-2xl: 2rem;
+  /* 32px - totals/balance display */
+  --font-3xl: 2.5rem;
+  /* 40px - hero balance number */
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: var(--font-base);
+  line-height: 1.4;
+  scroll-behavior: smooth;
+  color: var(--color-text-primary);
+  scrollbar-color: #888888 transparent;
+}
+
+.container {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.expense-tracker-card {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  border: .1rem solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  background-color: var(--color-surface);
+}
+
+/* Balance Section  */
+.balance-container {
+  width: 95%;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+}
+
+.total-balance {
+  font-size: var(--font-xl);
+  margin-bottom: 1rem;
+
+  & #balance {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    margin-top: .5rem;
+  }
+}
+
+.income-expense {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: .8rem;
+
+  & .income-div,
+  .expense-div {
+    padding: 1.4rem 8rem;
+    font-size: var(--font-lg);
+    font-weight: 700;
+    border-radius: var(--radius-lg);
+    border: .1rem solid var(--color-border);
+    background-color: var(--color-surface);
+  }
+
+  & .income-div {
+    width: 50%;
+    color: var(--color-income);
+  }
+
+  & .expense-div {
+    width: 50%;
+    color: var(--color-expense);
+  }
+}
+
+/* Transaction Section */
+
+.transactions-container {
+  width: 95%;
+  display: flex;
+  gap: 1rem;
+  height: 20rem;
+}
+
+/* Show Transaction Section */
+
+.show-transactions {
+  width: 50%;
+
+  & .all-transactions {
+    height: 20rem;
+    overflow: auto;
+    padding: .5rem 1rem;
+
+    & .transaction {
+      /* background-color: #1b1a1a; */
+      box-shadow: rgba(168, 168, 168, 0.24) 0px 3px 8px;
+      display: flex;
+      align-items: center;
+      border-radius: var(--radius-lg);
+      border-right: .3rem solid var(--color-expense);
+      margin-bottom: .5rem;
+
+      & .transaction-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        width: 90%;
+        padding: 1rem;
+      }
+
+      & .remove-btn {
+        width: 10%;
+        text-align: center;
+        cursor: pointer;
+        display: none;
+      }
+
+      &:hover {
+
+        & .remove-btn {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+/* Add Transaction Section */
+
+.add-transactions {
+  width: 50%;
+  background-color: #1e2431;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-lg);
+
+  & h3 {
+    margin-bottom: 1rem;
+  }
+
+  & form {
+    font-size: var(--font-lg);
+
+    & input,
+    button {
+      width: 100%;
+      padding: .4rem 1rem;
+      margin-top: .4rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: var(--font-base);
+    }
+
+    & #add-transaction-btn {
+      background-color: #137bf9;
+      font-weight: 600;
+      color: var(--color-text-primary);
+
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+
+    & .negative-note {
+      color: var(--color-text-secondary);
+      font-size: var(--font-sm);
+      margin-top: .15rem;
+    }
+  }
+}
+
+/* ===========================
+   Responsive Media Queries
+=========================== */
+
+/* Large Tablets & Small Laptops */
+@media (max-width: 1200px) {
+  .expense-tracker-card {
+    width: 90%;
+  }
+
+  .income-expense .income-div,
+  .income-expense .expense-div {
+    padding: 1.4rem 5rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .expense-tracker-card {
+    width: 95%;
+  }
+
+  .transactions-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .show-transactions,
+  .add-transactions {
+    width: 100%;
+  }
+
+  .show-transactions .all-transactions {
+    height: 30rem;
+  }
+
+  .income-expense .income-div,
+  .income-expense .expense-div {
+    padding: 1.2rem 3rem;
+    font-size: 1.6rem;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 768px) {
+  .expense-tracker-card {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .balance-container,
+  .transactions-container {
+    width: 100%;
+  }
+
+  .income-expense {
+    flex-direction: column;
+  }
+
+  .income-expense .income-div,
+  .income-expense .expense-div {
+    width: 100%;
+    padding: 1.4rem;
+    text-align: center;
+  }
+
+  .show-transactions .all-transactions {
+    height: 25rem;
+  }
+
+  .transaction-details {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: .3rem;
+  }
+
+  .remove-btn {
+    display: block !important;
+    width: auto !important;
+    padding-right: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  html {
+    font-size: 56.25%;
+    /* 9px */
+  }
+
+  .expense-tracker-card {
+    padding: 1rem;
+  }
+
+  .total-balance {
+    font-size: 2rem;
+  }
+
+  .total-balance #balance {
+    font-size: 2.8rem;
+  }
+
+  .add-transactions {
+    padding: 1rem;
+  }
+
+  .add-transactions form input,
+  .add-transactions form button {
+    padding: .8rem;
+  }
+
+  .transaction {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .transaction-details {
+    width: 100% !important;
+  }
+
+  .remove-btn {
+    width: 100% !important;
+    text-align: center;
+    padding: .8rem;
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+
+  .expense-tracker-card {
+    gap: 1rem;
+  }
+
+  .balance-container {
+    padding: .8rem;
+  }
+
+  .income-expense .income-div,
+  .income-expense .expense-div {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .show-transactions .all-transactions {
+    height: 20rem;
+  }
+
+  .add-transactions h3 {
+    text-align: center;
+  }
+}

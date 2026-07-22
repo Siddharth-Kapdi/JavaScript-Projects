@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Github Finder</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Heading Section -->
+    <div class="head-container">
+      <div class="heading-div">
+        <i class="fa-brands fa-github"></i>
+        <h1 class="heading">Github User Finder</h1>
+      </div>
+      <div class="heading-info">
+        <p>Search for any Github User to see their profile and repositories</p>
+      </div>
+    </div>
+
+    <!-- Search Bar Section -->
+    <div class="search-bar">
+      <form action="">
+        <input type="text" name="input" id="input">
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+    </div>
+
+    <!-- Main Hero Section -->
+    <div class="hero-container">
+
+      <!-- Account Details Section -->
+      <div class="user-info-section">
+        <div class="user-avatar">
+          <img id="avatar" src="" alt="user Avatar" height="100px" width="100px">
+        </div>
+
+        <div class="user-details">
+          <h2 id="user-name"></h2>
+          <p id="user-id"></p>
+          <p id="user-bio"></p>
+          <div class="location-joiningDate">
+            <p><i class="fa-solid fa-location-dot"></i> <span class="user-location"> </span></p>
+            <p><i class="fa-solid fa-calendar"></i><span id="user-join-date"> </span></p>
+          </div>
+          <a href="" id="view-profile">View Profile</a>
+        </div>
+      </div>
+
+      <div class="user-follows-repos">
+        <div class="user-followers">
+          <p><i class="fa-solid fa-people-group"></i><span id="followers"></span> followers</p>
+        </div>
+        <div class="user-following">
+          <p><i class="fa fa-users" aria-hidden="true"></i> <span id="following"></span> following</p>
+        </div>
+        <div class="user-repos">
+          <p><i class="fa-solid fa-code-branch"></i> <span id="repos"></span> repositories</p>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Social media Section -->
+      <div class="social-medias">
+        <div class="location">
+          <p><i class="fa-solid fa-building"></i><span class="user-location"> </span></p>
+        </div>
+        <div class="portfolio">
+          <p><i class="fa-solid fa-link"></i> <span id="user-portfolio"></span></p>
+        </div>
+        <div class="twitter">
+          <p><i class="fa-brands fa-twitter"></i> <span id="user-twitter"></span></p>
+        </div>
+      </div>
+
+      <!-- Repositories Section -->
+      <div class="repositories-container">
+        <h2 class="repo-heading">Latest Repositories</h2>
+        <hr>
+
+        <div class="repositories-div">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
