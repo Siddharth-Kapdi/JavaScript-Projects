@@ -1,4 +1,4 @@
-# JavaScript Projects
+# JavaScript Practice Projects
 
 A curated collection of small JavaScript apps created for learning and practicing frontend
 development. Each project includes HTML, CSS, and JavaScript files to demonstrate interactivity, API
